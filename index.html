@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title> my first web page</title>
+ </head>
+ <body>
+     <header>
+    <h1></h1>>do ur best </h1>      
+     </header>
+       <form id="genderForm">
+    <p>What is your gender?</p>
+    <input type="radio" name="gender" value="male" id="m"> <label for="m">Male</label>
+    <input type="radio" name="gender" value="female" id="f"> <label for="f">Female</label>
+    <br><br>
+    <input type="submit" value="be ready">
+</form>
+
+<div id="quiz-container"></div>
+
+<script>
+document.getElementById('genderForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const genderInput = document.querySelector('input[name="gender"]:checked');
+    if (!genderInput) { alert("يلا يعم نوعك اي"); return; }
+
+    const gender = genderInput.value;
+    const quizContainer = document.getElementById('quiz-container');
+    let questions = "";
+
+    if (gender === "male") {
+        questions = `
+            <div class="questions-box">
+                <h3>يلا كويز الأولاد</h3>
+                <p>سؤال 1: من هو لاعبك المفضل؟</p>
+                <input type="text" id="answer1_male" placeholder="algameel a7med tamer">
+                <label for="player-choice">Choose a player:</label>
+                <input list="players" id="player-choice" name="player-choice" />
+                <datalist id="players">
+                  <option value="Lionel Messi"></option>
+                  <option value="Cristiano Ronaldo"></option>
+                  <option value="Neymar Jr."></option>
+                  <option value="algameel a7med tamer"></option>
+                </datalist>
+                <p>سؤال 2: من مخترع المصباح؟</p>
+                <input type="text" id="answer2_male" placeholder="tomas edison">
+                <label for="innovator-choice">Choose an innovator:</label>
+                <input list="innovator" id="innovator-choice" name="innovator-choice" />
+                <datalist id="innovator">
+                  <option value="Thomas Edison"></option>
+                  <option value="Alexander Graham Bell"></option>
+                  <option value="Nikola Tesla"></option>
+                </datalist>
+                <p>سؤال 3: فكره تيم 19104؟</p>
+                <input type="text" id="answer3_male" placeholder="يستخدمو ماتيرالز ريسيكلد">
+                <label for="materials-choice">Choose materials:</label>
+                <input list="materials" id="materials-choice" name="materials-choice" />
+                <datalist id="materials">
+                  <option value="new"></option>
+                  <option value="form teh space"></option>
+                  <option value="in kitchin"></option>
+                  <option value="from ur mother"></option>
+                  <option value="ريسيكلد"></option>
+                </datalist>
+                <p>سؤال 4: مين احلى واحده في الدنيا؟</p>
+                <input type="text" id="answer4_male" placeholder="ur crush">
+            </div>`;
+    } else {
+        questions = `
+            <div class="questions-box">
+                <h3>يلا كويز البنات</h3>
+                <p>سؤال 1: مكسل صراحة فبلاش وجع دماغ؟</p>
+                <input type="text" id="answer1_female" placeholder="say politely okay">
+                <label for="answer-choice">Choose an answer:</label>
+                <input list="answers" id="answer-choice" name="answer-choice" />
+                <datalist id="answers">
+                  <option value="okay my sir"></option>
+                </datalist>
+            </div>`;
+    }
+
+    this.style.display = "none"; 
+    quizContainer.innerHTML = questions;
+});
+</script>
+<label for="file">File progress:</label>
+
+<progress id="file" max="100" value="70">70%</progress>
+<input type="time" list="popularHours" />
+<datalist id="popularHours">
+     <option value="01:00"></option>
+      <option value="02:00"></option>
+         <option value="03:00"></option>
+          <option value="04:00"></option>
+            <option value="05:00"></option>
+             <option value="06:00"></option>
+              <option value="07:00"></option>
+                <option value="08:00"></option>
+                 <option value="09:00"></option>
+                  <option value="10:00"></option>
+                   <option value="11:00"></option>
+                    <option value="12:00"></option>
+                      <option value="13:00"></option>
+                       <option value="14:00"></option>
+                          <option value="15:00"></option>
+                            <option value="16:00"></option>
+                             <option value="17:00"></option>
+                              <option value="18:00"></option>
+                               <option value="19:00"></option>
+                                 <option value="20:00"></option>
+                                   <option value="21:00"></option>
+                                    <option value="22:00"></option>
+                                     <option value="23:00"></option>
+                                      <option value="00:00"></option>
+
+</datalist>
+<p>Search results for "algameel a7med tamer":</p>
+
+<hr />
+
+<p>
+  the role model <mark> al lawkash </mark> a7la loksha kda kda  
+</p>
+
+ </body>                    
+</html>
